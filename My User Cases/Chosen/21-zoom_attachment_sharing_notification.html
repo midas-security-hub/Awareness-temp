@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attachment Sharing Notification - Zoom</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Client-specific resets */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+      -webkit-text-size-adjust: 100% !important;
+      -ms-text-size-adjust: 100% !important;
+    }
+    table, td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+      border-collapse: collapse !important;
+    }
+    img {
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+      outline: none;
+      text-decoration: none;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Core typography and colors */
+    body {
+      background-color: #f4f6f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #2b3649;
+      line-height: 1.6;
+    }
+
+    /* Hover effects for interactive clients */
+    .attachment-card {
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+    .attachment-card:hover {
+      background-color: #e8f0fa !important;
+      border-color: #c9dbf2 !important;
+    }
+
+    /* Responsive adjustments */
+    @media only screen and (max-width: 620px) {
+      .email-wrapper {
+        padding: 10px 8px !important;
+      }
+      .email-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 8px !important;
+      }
+      .header-content-cell {
+        padding: 24px 20px 20px 20px !important;
+      }
+      .header-col-left {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .header-col-right {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: right !important;
+        margin-top: 10px !important;
+      }
+      .body-content-cell {
+        padding: 24px 20px !important;
+      }
+      .hero-title {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+      }
+      .hero-subtitle {
+        font-size: 13.5px !important;
+      }
+      .attachment-table {
+        padding: 14px 16px !important;
+      }
+      .footer-cell {
+        padding: 16px 20px 24px 20px !important;
+      }
+      .footer-inner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+      }
+      .footer-pipe {
+        display: none !important;
+      }
+    }
+
+    /* Dark Mode support */
+    @media (prefers-color-scheme: dark) {
+      body, .email-wrapper {
+        background-color: #12161f !important;
+      }
+      .email-container {
+        background-color: #1b2230 !important;
+        border-color: #2a354a !important;
+      }
+      .body-content-cell {
+        background-color: #1b2230 !important;
+        color: #e2e8f0 !important;
+      }
+      .body-text, .salutation, .signoff-text {
+        color: #cbd5e1 !important;
+      }
+      .sender-name {
+        color: #f1f5f9 !important;
+      }
+      .sender-meta {
+        color: #94a3b8 !important;
+      }
+      .attachment-card {
+        background-color: #242e42 !important;
+        border-color: #334155 !important;
+      }
+      .file-name {
+        color: #f8fafc !important;
+      }
+      .file-meta {
+        color: #94a3b8 !important;
+      }
+      .divider-line {
+        border-top-color: #2e3a4e !important;
+      }
+      .footer-tagline {
+        color: #94a3b8 !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f6f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+
+  <!-- Outer Background Table -->
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="email-wrapper" style="background-color: #f4f6f9; padding: 32px 16px;">
+    <tr>
+      <td align="center" valign="top">
+
+        <!-- Preheader text (Hidden in email body, visible in inbox preview snippet) -->
+        <div style="display: none; font-size: 1px; color: #f4f6f9; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+          A file has been shared via Zoom: Meeting_Notes.pdf. Please review the attached file at your convenience.
+        </div>
+
+        <!--[if mso]>
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+
+        <!-- Main Card Container (600px standard) -->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="email-container" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); border: 1px solid #e7ecf2; margin: 0 auto;">
+          
+          <!-- ========================================================= -->
+          <!-- HEADER / HERO BANNER                                      -->
+          <!-- ========================================================= -->
+          <tr>
+            <td style="padding: 0; background: #eaf3fe linear-gradient(135deg, #eef5fe 0%, #e2eefd 60%, #d8e9fd 100%);">
+              
+              <!-- Banner Layout Table -->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td class="header-content-cell" style="padding: 30px 28px 24px 32px; vertical-align: top;">
+                    
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <!-- Left Column: Logo & Hero Titles -->
+                        <td class="header-col-left" valign="top" style="vertical-align: top; padding-right: 12px;">
+                          
+                          <!-- Zoom Logo (Camera Icon Badge + Wordmark) -->
+                          <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 22px;">
+                            <tr>
+                              <td valign="middle" style="padding-right: 8px;">
+                                <!-- Zoom Video Camera Glyph Badge -->
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 32px; height: 32px; background-color: #0B5CFF; border-radius: 50%;">
+                                  <tr>
+                                    <td align="center" valign="middle">
+                                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                                        <!-- Camera body -->
+                                        <rect x="2" y="6" width="13" height="12" rx="2.5" fill="#FFFFFF"/>
+                                        <!-- Camera lens -->
+                                        <path d="M16 9.5L21.2 5.6C21.7 5.2 22.5 5.6 22.5 6.3V17.7C22.5 18.4 21.7 18.8 21.2 18.4L16 14.5V9.5Z" fill="#FFFFFF"/>
+                                      </svg>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td valign="middle">
+                                <!-- Zoom Wordmark in exact lowercase typography -->
+                                <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 26px; font-weight: 800; color: #0B5CFF; letter-spacing: -0.6px; line-height: 1; display: inline-block;">zoom</span>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <!-- Notification Main Title -->
+                          <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 800; color: #0E1E38; line-height: 1.25; letter-spacing: -0.3px;">
+                            Attachment Sharing<br>Notification
+                          </h1>
+
+                          <!-- Subtitle -->
+                          <div class="hero-subtitle" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 500; color: #5F7089; line-height: 1.4;">
+                            A file has been shared via Zoom
+                          </div>
+
+                        </td>
+
+                        <!-- Right Column: Document & Share Graphic -->
+                        <td class="header-col-right" width="180" align="right" valign="bottom" style="width: 180px; text-align: right; vertical-align: bottom;">
+                          
+                          <!-- Vector Graphic of Document with Folded Corner + Share Badge -->
+                          <svg width="175" height="155" viewBox="0 0 175 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; margin-left: auto;">
+                            <!-- Soft ambient background curved waves/blobs -->
+                            <path d="M75 10C125 -15 185 20 175 90C165 155 105 160 65 130C30 105 35 30 75 10Z" fill="#D3E6FC" fill-opacity="0.55"/>
+                            <path d="M100 25C150 5 190 40 180 105C170 160 120 165 85 140C55 115 60 40 100 25Z" fill="#C5DEFB" fill-opacity="0.4"/>
+                            
+                            <!-- Document Sheet with folded corner and drop shadow -->
+                            <g filter="url(#filter0_d)">
+                              <!-- White paper sheet with top-right corner clipped for dog-ear fold -->
+                              <path d="M38 18H106L134 46V130C134 135.523 129.523 140 124 140H38C32.4772 140 28 135.523 28 130V28C28 22.4772 32.4772 18 38 18Z" fill="#FFFFFF"/>
+                              
+                              <!-- Folded corner flap -->
+                              <path d="M106 18V42C106 44.2091 107.791 46 110 46H134L106 18Z" fill="#E2EDFA"/>
+                              <path d="M106 18L134 46H110C107.791 46 106 44.2091 106 42V18Z" fill="#D2E3F7"/>
+                            </g>
+
+                            <!-- Document placeholder horizontal text lines -->
+                            <rect x="42" y="44" width="45" height="6" rx="3" fill="#88B8FC"/>
+                            <rect x="42" y="60" width="70" height="6" rx="3" fill="#A8CDFD"/>
+                            <rect x="42" y="76" width="62" height="6" rx="3" fill="#C4DCFE"/>
+                            <rect x="42" y="92" width="48" height="6" rx="3" fill="#C4DCFE"/>
+
+                            <!-- Share Icon Badge Overlaid on bottom right -->
+                            <g filter="url(#filter1_d)">
+                              <!-- Vibrant Blue Circle Badge -->
+                              <circle cx="132" cy="116" r="24" fill="#0B5CFF"/>
+                              
+                              <!-- Crisp Share Glyph (< with 3 connected nodes) -->
+                              <!-- Node connectors -->
+                              <line x1="126" y1="116" x2="137" y2="110" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                              <line x1="126" y1="116" x2="137" y2="122" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                              
+                              <!-- 3 Nodes -->
+                              <!-- Center left node -->
+                              <circle cx="125" cy="116" r="3.2" fill="#FFFFFF"/>
+                              <!-- Top right node -->
+                              <circle cx="138" cy="109" r="3.2" fill="#FFFFFF"/>
+                              <!-- Bottom right node -->
+                              <circle cx="138" cy="123" r="3.2" fill="#FFFFFF"/>
+                            </g>
+
+                            <!-- SVG Filters for soft realistic shadows -->
+                            <defs>
+                              <filter id="filter0_d" x="22" y="14" width="120" height="136" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="4"/>
+                                <feGaussianBlur stdDeviation="4"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.043 0 0 0 0 0.114 0 0 0 0 0.25 0 0 0 0.08 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                              </filter>
+                              <filter id="filter1_d" x="102" y="88" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="3"/>
+                                <feGaussianBlur stdDeviation="3"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.043 0 0 0 0 0.36 0 0 0 0 1 0 0 0 0.3 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                              </filter>
+                            </defs>
+                          </svg>
+
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- ========================================================= -->
+          <!-- EMAIL BODY CONTENT                                        -->
+          <!-- ========================================================= -->
+          <tr>
+            <td class="body-content-cell" style="padding: 34px 36px 28px 36px; background-color: #ffffff;">
+              
+              <!-- Salutation -->
+              <div class="salutation" style="margin: 0 0 18px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 500; color: #1e2838; line-height: 1.6;">
+                Dear [Recipient Name],
+              </div>
+
+              <!-- Paragraph 1 -->
+              <p class="body-text" style="margin: 0 0 18px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 400; color: #2e3a4e; line-height: 1.65;">
+                I would like to inform you that the relevant attachment has been shared via Zoom for your reference.
+              </p>
+
+              <!-- Paragraph 2 -->
+              <p class="body-text" style="margin: 0 0 24px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 400; color: #2e3a4e; line-height: 1.65;">
+                Please review the attached file at your convenience. If you have any questions or require further information, please feel free to contact me.
+              </p>
+
+              <!-- ===================================================== -->
+              <!-- ATTACHMENT CARD / FILE PREVIEW CALLOUT               -->
+              <!-- ===================================================== -->
+              <div style="margin: 0 0 24px 0;">
+                <a href="{{.URL}}" target="_blank" style="text-decoration: none; display: block; color: inherit;">
+                  <!--[if mso]>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f1f5fa; border: 1px solid #e1e8f3; border-radius: 8px;">
+                  <tr>
+                  <td style="padding: 18px 20px;">
+                  <![endif]-->
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="attachment-card" style="background-color: #f1f5fa; border: 1px solid #e2eaf4; border-radius: 9px; padding: 16px 20px; box-sizing: border-box;">
+                    <tr>
+                      <!-- PDF Icon Column -->
+                      <td width="38" valign="middle" style="width: 38px; padding-right: 16px; vertical-align: middle;">
+                        <!-- Clean PDF Document Vector Icon -->
+                        <svg width="34" height="40" viewBox="0 0 34 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                          <!-- Document outline with dog-ear corner -->
+                          <path d="M3 6C3 3.79086 4.79086 2 7 2H22L31 11V34C31 36.2091 29.2091 38 27 38H7C4.79086 38 3 36.2091 3 34V6Z" stroke="#0B5CFF" stroke-width="2.2" stroke-linejoin="round" fill="#FFFFFF"/>
+                          <!-- Corner fold -->
+                          <path d="M22 2V11H31" stroke="#0B5CFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <!-- Document content horizontal lines -->
+                          <path d="M9 19H25" stroke="#0B5CFF" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M9 25H25" stroke="#0B5CFF" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M9 31H18" stroke="#0B5CFF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                      </td>
+
+                      <!-- File Details Column -->
+                      <td valign="middle" style="vertical-align: middle;">
+                        <!-- File Title -->
+                        <div class="file-name" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15.5px; font-weight: 700; color: #111e33; line-height: 1.35; margin-bottom: 3px;">
+                          Meeting_Notes.pdf
+                        </div>
+                        <!-- File Metadata (Type • Size) -->
+                        <div class="file-meta" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 400; color: #69788f; line-height: 1.2;">
+                          PDF Document &nbsp;&bull;&nbsp; 2.4 MB
+                        </div>
+                      </td>
+
+                      <!-- Download / Action hint arrow (Optional subtle affordance) -->
+                      <td width="28" align="right" valign="middle" style="width: 28px; text-align: right; vertical-align: middle;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; opacity: 0.6;">
+                          <path d="M9 6L15 12L9 18" stroke="#0B5CFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!--[if mso]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]-->
+                </a>
+              </div>
+
+              <!-- Paragraph 3 (Follow up) -->
+              <p class="body-text" style="margin: 0 0 24px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 400; color: #2e3a4e; line-height: 1.65;">
+                Should you have any issues accessing the file or need additional information, please let me know.
+              </p>
+
+              <!-- Closing / Sign-off -->
+              <div style="margin-top: 10px;">
+                <div class="signoff-text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; color: #2e3a4e; margin-bottom: 14px;">
+                  Best regards,
+                </div>
+                <div class="sender-name" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; color: #111e33; line-height: 1.3;">
+                  [Your Name]
+                </div>
+                <div class="sender-meta" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13.5px; font-weight: 400; color: #69788f; line-height: 1.4; margin-top: 2px;">
+                  [Your Position / Department]
+                </div>
+              </div>
+
+            </td>
+          </tr>
+
+          <!-- ========================================================= -->
+          <!-- DIVIDER & FOOTER                                          -->
+          <!-- ========================================================= -->
+          <tr>
+            <td style="padding: 0 36px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td class="divider-line" style="border-top: 1px solid #eaedf3; height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="footer-cell" style="padding: 22px 36px 30px 36px; background-color: #ffffff;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td valign="middle">
+                    
+                    <table border="0" cellpadding="0" cellspacing="0" class="footer-inner">
+                      <tr>
+                        <!-- Zoom Footer Wordmark -->
+                        <td valign="middle" style="padding-right: 14px;">
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 20px; font-weight: 800; color: #0B5CFF; letter-spacing: -0.5px; line-height: 1; display: inline-block;">zoom</span>
+                        </td>
+
+                        <!-- Vertical Divider Pipe -->
+                        <td class="footer-pipe" valign="middle" style="padding-right: 14px; color: #cbd5e1; font-size: 18px; line-height: 1; font-weight: 300;">
+                          |
+                        </td>
+
+                        <!-- Official Tagline -->
+                        <td valign="middle" class="footer-tagline" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; color: #64748b; line-height: 1.3;">
+                          Better Communication. A Brighter Future.
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+
+        <!-- Security / Confidentiality notice (optional subtle footer metadata) -->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 16px auto 0 auto;">
+          <tr>
+            <td align="center" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11.5px; color: #94a3b8; line-height: 1.5; padding: 0 16px;">
+              This email was generated by Zoom Video Communications, Inc.<br>
+              55 Almaden Blvd, Suite 600, San Jose, CA 95113
+            </td>
+          </tr>
+        </table>
+
+        <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

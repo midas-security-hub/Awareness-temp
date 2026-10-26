@@ -94,6 +94,7 @@
       list-style: none;
     }
     .template-item {
+      position: relative;
       border-bottom: 1px solid #f1f5f9;
     }
     .template-item:last-child {
@@ -103,10 +104,34 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 28px;
+      padding: 14px 96px 14px 28px;
       text-decoration: none;
       color: #0f172a;
       transition: background 0.15s ease;
+    }
+    .download-btn {
+      position: absolute;
+      right: 48px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #0a2540;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 1;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .download-btn:hover {
+      background: #166534;
+      border-color: #166534;
+      color: #fff;
     }
     .template-link:hover {
       background: #f8fafc;
@@ -171,112 +196,124 @@
         <div class="dropdown-content">
           <ul class="template-list">
             <li class="template-item">
-              <a href="My User Cases/Chosen/03-salary_account_reverification_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/03-salary_account_reverification_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">03 - Salary Account Reverification (Chosen)</div>
                   <div class="template-desc">Reverification with View Bank Details button</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/03-salary_account_reverification_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/04-paid_holiday_schedule_update_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/04-paid_holiday_schedule_update_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">04 - Paid Holiday Schedule Update (Chosen)</div>
                   <div class="template-desc">Modified version with leave deadline</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/04-paid_holiday_schedule_update_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/05-annual_leave_email_template.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/05-annual_leave_email_template.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">05 - Annual Leave Email Template (Chosen)</div>
                   <div class="template-desc">Selected annual leave template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/05-annual_leave_email_template.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/08-dubai_head_office_opportunity.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/08-dubai_head_office_opportunity.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">08 - Dubai Head Office Opportunity (Chosen)</div>
                   <div class="template-desc">Selected job opportunity template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/08-dubai_head_office_opportunity.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/10-fedex_delivery_pending_email_updated.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/10-fedex_delivery_pending_email_updated.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">10 - FedEx Delivery Pending (Chosen)</div>
                   <div class="template-desc">Updated delivery confirmation with deadline notice</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/10-fedex_delivery_pending_email_updated.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/11-ai-policy-claude_access_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/11-ai-policy-claude_access_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">11 - AI Policy Claude Access (Chosen)</div>
                   <div class="template-desc">Selected AI policy template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/11-ai-policy-claude_access_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/15-employee_exchange_program_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/15-employee_exchange_program_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">15 - Employee Exchange Program (Chosen)</div>
                   <div class="template-desc">Selected exchange program template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/15-employee_exchange_program_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/16-industrial_equipment_order_dispatched_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/16-industrial_equipment_order_dispatched_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">16 - Industrial Equipment Order Dispatched (Chosen)</div>
                   <div class="template-desc">Selected dispatch notification template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/16-industrial_equipment_order_dispatched_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/17-employee_discount_offer_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/17-employee_discount_offer_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">17 - Employee Discount Offer (Chosen)</div>
                   <div class="template-desc">Selected discount offer template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/17-employee_discount_offer_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/18-laptop_replacement_dell_to_asus_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/18-laptop_replacement_dell_to_asus_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">18 - Laptop Replacement Dell to Asus (Chosen)</div>
                   <div class="template-desc">Selected laptop replacement template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/18-laptop_replacement_dell_to_asus_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/19-microsoft_unusual_activity_email.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/19-microsoft_unusual_activity_email.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">19 - Microsoft Unusual Activity (Chosen)</div>
                   <div class="template-desc">Selected security alert template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/19-microsoft_unusual_activity_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/Chosen/21-zoom_attachment_sharing_notification.html" class="template-link highlight">
+              <a href="My User Cases/Chosen/21-zoom_attachment_sharing_notification.html" target="_blank" rel="noopener" class="template-link highlight">
                 <div class="template-info">
                   <div class="template-name">21 - Zoom Attachment Sharing Notification (Chosen)</div>
                   <div class="template-desc">Selected Zoom notification template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/Chosen/21-zoom_attachment_sharing_notification.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
           </ul>
         </div>
@@ -294,49 +331,54 @@
         <div class="dropdown-content">
           <ul class="template-list">
             <li class="template-item">
-              <a href="midas_banner.html" class="template-link">
+              <a href="midas_banner.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">Midas Banner</div>
                   <div class="template-desc">Header banner component</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="midas_banner.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="midas_logo.html" class="template-link">
+              <a href="midas_logo.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">Midas Logo</div>
                   <div class="template-desc">Logo component</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="midas_logo.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="midas_footer.html" class="template-link">
+              <a href="midas_footer.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">Midas Footer</div>
                   <div class="template-desc">Footer component</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="midas_footer.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="full_signature.html" class="template-link">
+              <a href="full_signature.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">Full Signature</div>
                   <div class="template-desc">Email signature block</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="full_signature.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="email_body.html" class="template-link">
+              <a href="email_body.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">Email Body</div>
                   <div class="template-desc">Base email body template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="email_body.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
           </ul>
         </div>
@@ -354,13 +396,14 @@
         <div class="dropdown-content">
           <ul class="template-list">
             <li class="template-item">
-              <a href="annual_leave_email_template.html" class="template-link">
+              <a href="annual_leave_email_template.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">Annual Leave Email Template</div>
                   <div class="template-desc">Annual leave notification</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="annual_leave_email_template.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
           </ul>
         </div>
@@ -378,13 +421,14 @@
         <div class="dropdown-content">
           <ul class="template-list">
             <li class="template-item">
-              <a href="FD/email footer.html" class="template-link">
+              <a href="FD/email footer.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">Email Footer (FD)</div>
                   <div class="template-desc">FD email footer component</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="FD/email footer.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
               <a href="FD/download-icon.png" class="template-link" target="_blank">
@@ -420,184 +464,204 @@
         <div class="dropdown-content">
           <ul class="template-list">
             <li class="template-item">
-              <a href="My User Cases/01-Annual-trip-feedback-email.html" class="template-link">
+              <a href="My User Cases/01-Annual-trip-feedback-email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">01 - Annual Trip Feedback Email</div>
                   <div class="template-desc">Feedback request for annual trip</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/01-Annual-trip-feedback-email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/02-Policy-acknowledgment-email.html" class="template-link">
+              <a href="My User Cases/02-Policy-acknowledgment-email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">02 - Policy Acknowledgment Email</div>
                   <div class="template-desc">Policy acknowledgment request</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/02-Policy-acknowledgment-email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/03-salary_account_reverification_email.html" class="template-link">
+              <a href="My User Cases/03-salary_account_reverification_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">03 - Salary Account Reverification Email</div>
                   <div class="template-desc">Salary account verification</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/03-salary_account_reverification_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/04-paid_holiday_schedule_update_email.html" class="template-link">
+              <a href="My User Cases/04-paid_holiday_schedule_update_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">04 - Paid Holiday Schedule Update Email</div>
                   <div class="template-desc">Holiday schedule update</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/04-paid_holiday_schedule_update_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/05-annual_leave_email_template.html" class="template-link">
+              <a href="My User Cases/05-annual_leave_email_template.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">05 - Annual Leave Email Template</div>
                   <div class="template-desc">Annual leave template</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/05-annual_leave_email_template.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/06-annual_trip_photos_email_template.html" class="template-link">
+              <a href="My User Cases/06-annual_trip_photos_email_template.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">06 - Annual Trip Photos Email Template</div>
                   <div class="template-desc">Trip photos notification</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/06-annual_trip_photos_email_template.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/07-inland_revenue_tax_notice_email.html" class="template-link">
+              <a href="My User Cases/07-inland_revenue_tax_notice_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">07 - Inland Revenue Tax Notice Email</div>
                   <div class="template-desc">Tax notice</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/07-inland_revenue_tax_notice_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/08-dubai_head_office_opportunity.html" class="template-link">
+              <a href="My User Cases/08-dubai_head_office_opportunity.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">08 - Dubai Head Office Opportunity</div>
                   <div class="template-desc">Job opportunity</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/08-dubai_head_office_opportunity.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/09-ethical-misconduct-summons_email.html" class="template-link">
+              <a href="My User Cases/09-ethical-misconduct-summons_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">09 - Ethical Misconduct Summons Email</div>
                   <div class="template-desc">Misconduct summons</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/09-ethical-misconduct-summons_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/10 -fedex_delivery_pending_email.html" class="template-link">
+              <a href="My User Cases/10 -fedex_delivery_pending_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">10 - FedEx Delivery Pending Email</div>
                   <div class="template-desc">Delivery notification</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/10 -fedex_delivery_pending_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/11-ai-policy-claude_access_email.html" class="template-link">
+              <a href="My User Cases/11-ai-policy-claude_access_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">11 - AI Policy Claude Access Email</div>
                   <div class="template-desc">AI policy update</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/11-ai-policy-claude_access_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/12-corruption-complaint_email.html" class="template-link">
+              <a href="My User Cases/12-corruption-complaint_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">12 - Corruption Complaint Email</div>
                   <div class="template-desc">Corruption complaint</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/12-corruption-complaint_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/13-audit-report-recheck_email.html" class="template-link">
+              <a href="My User Cases/13-audit-report-recheck_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">13 - Audit Report Recheck Email</div>
                   <div class="template-desc">Audit report review</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/13-audit-report-recheck_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/14-esport-event-opinion_email.html" class="template-link">
+              <a href="My User Cases/14-esport-event-opinion_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">14 - Esport Event Opinion Email</div>
                   <div class="template-desc">Event opinion request</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/14-esport-event-opinion_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/15-employee_exchange_program_email.html" class="template-link">
+              <a href="My User Cases/15-employee_exchange_program_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">15 - Employee Exchange Program Email</div>
                   <div class="template-desc">Exchange program</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/15-employee_exchange_program_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/16-industrial_equipment_order_dispatched_email.html" class="template-link">
+              <a href="My User Cases/16-industrial_equipment_order_dispatched_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">16 - Industrial Equipment Order Dispatched Email</div>
                   <div class="template-desc">Order dispatch notification</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/16-industrial_equipment_order_dispatched_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/17-employee_discount_offer_email.html" class="template-link">
+              <a href="My User Cases/17-employee_discount_offer_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">17 - Employee Discount Offer Email</div>
                   <div class="template-desc">Discount offer</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/17-employee_discount_offer_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/18-laptop_replacement_dell_to_asus_email.html" class="template-link">
+              <a href="My User Cases/18-laptop_replacement_dell_to_asus_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">18 - Laptop Replacement Dell to Asus Email</div>
                   <div class="template-desc">Laptop replacement</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/18-laptop_replacement_dell_to_asus_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/19-microsoft_unusual_activity_email.html" class="template-link">
+              <a href="My User Cases/19-microsoft_unusual_activity_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">19 - Microsoft Unusual Activity Email</div>
                   <div class="template-desc">Security alert</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/19-microsoft_unusual_activity_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
             <li class="template-item">
-              <a href="My User Cases/20-password_reset_exposure_email.html" class="template-link">
+              <a href="My User Cases/20-password_reset_exposure_email.html" target="_blank" rel="noopener" class="template-link">
                 <div class="template-info">
                   <div class="template-name">20 - Password Reset Exposure Email</div>
                   <div class="template-desc">Password security alert</div>
                 </div>
                 <span class="arrow">→</span>
               </a>
+              <button type="button" class="download-btn" data-file="My User Cases/20-password_reset_exposure_email.html" title="Download template" aria-label="Download template">&#8681;</button>
             </li>
           </ul>
         </div>
@@ -614,6 +678,25 @@
       const dropdown = header.parentElement;
       dropdown.classList.toggle('open');
     }
+
+    async function downloadTemplate(path) {
+      const blob = await (await fetch(path, { cache: 'no-store' })).blob();
+      const doc = new DOMParser().parseFromString(await blob.text(), 'text/html');
+      doc.querySelectorAll('[data-template-ui]').forEach(el => el.remove());
+      const html = (doc.doctype ? '<!DOCTYPE html>\n' : '') + doc.documentElement.outerHTML;
+      const url = URL.createObjectURL(new Blob([html], { type: 'text/html;charset=utf-8' }));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = decodeURIComponent(path.split('/').pop());
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', () => downloadTemplate(btn.dataset.file));
+    });
   </script>
 </body>
 </html>

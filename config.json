@@ -1,1 +1,29 @@
-$gt or $regex.
+{
+  "app": {
+    "name": "Awareness Template Hub",
+    "basePath": "/Awareness-temp/",
+    "homePage": "index.html"
+  },
+  "email": {
+    "senderName": "Midas Security",
+    "senderEmail": "",
+    "replyTo": ""
+  },
+  "template": {
+    "directory": "My User Cases",
+    "chosenDirectory": "My User Cases/Chosen",
+    "cleanDirectory": "My User Cases/My User Cases",
+    "fileExtension": ".html"
+  },
+  "assets": {
+    "directory": "FD",
+    "banner": "midas_banner.html",
+    "logo": "midas_logo.html",
+    "footer": "midas_footer.html",
+    "signature": "full_signature.html"
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info"
+  }
+}

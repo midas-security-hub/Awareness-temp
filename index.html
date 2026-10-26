@@ -14,7 +14,7 @@
       padding: 40px 20px;
     }
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
     }
     header {
@@ -32,31 +32,63 @@
       color: #64748b;
       font-size: 15px;
     }
-    .section {
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .dropdown {
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      margin-bottom: 32px;
       overflow: hidden;
       box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
-    .section-header {
+    .dropdown-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
       background: linear-gradient(to right, #f8fafc, white);
-      padding: 20px 28px;
-      border-bottom: 1px solid #e2e8f0;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: 1px solid transparent;
+      transition: background 0.15s ease;
     }
-    .section-header h2 {
-      font-size: 22px;
+    .dropdown.open .dropdown-header {
+      border-bottom-color: #e2e8f0;
+    }
+    .dropdown-header:hover {
+      background: #f1f5f9;
+    }
+    .dropdown-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .dropdown-title {
+      font-size: 18px;
       font-weight: 700;
       color: #0a2540;
-      margin-bottom: 4px;
     }
-    .section-header p {
+    .dropdown-subtitle {
+      font-size: 13px;
       color: #64748b;
-      font-size: 13.5px;
     }
-    .section-content {
-      padding: 8px 0;
+    .chevron {
+      font-size: 18px;
+      color: #94a3b8;
+      transition: transform 0.2s ease;
+    }
+    .dropdown.open .chevron {
+      transform: rotate(180deg);
+    }
+    .dropdown-content {
+      display: none;
+      padding: 6px 0;
+    }
+    .dropdown.open .dropdown-content {
+      display: block;
     }
     .template-list {
       list-style: none;
@@ -71,13 +103,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 28px;
+      padding: 14px 28px;
       text-decoration: none;
       color: #0f172a;
       transition: background 0.15s ease;
     }
     .template-link:hover {
       background: #f8fafc;
+    }
+    .template-link.highlight {
+      background: #f0fdf4;
+    }
+    .template-link.highlight:hover {
+      background: #dcfce7;
     }
     .template-info {
       flex: 1;
@@ -88,13 +126,22 @@
       color: #0a2540;
       margin-bottom: 2px;
     }
+    .template-link.highlight .template-name {
+      color: #166534;
+    }
     .template-desc {
       font-size: 13px;
       color: #64748b;
     }
+    .template-link.highlight .template-desc {
+      color: #15803d;
+    }
     .arrow {
       color: #94a3b8;
       font-size: 18px;
+    }
+    .template-link.highlight .arrow {
+      color: #22c55e;
     }
     footer {
       text-align: center;
@@ -111,339 +158,363 @@
       <p>Central hub for all email templates and components</p>
     </header>
 
-    <!-- Core Components Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Core Components</h2>
-        <p>Reusable header, footer, banner, logo, and signature components</p>
+    <div class="menu">
+      <!-- Chosen Templates Section - First & Highlighted -->
+      <div class="dropdown open">
+        <div class="dropdown-header" onclick="toggleDropdown(this)">
+          <div class="dropdown-title-group">
+            <div class="dropdown-title">Chosen Templates</div>
+            <div class="dropdown-subtitle">Selected/modified templates</div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="dropdown-content">
+          <ul class="template-list">
+            <li class="template-item">
+              <a href="My User Cases/Chosen/04-paid_holiday_schedule_update_email.html" class="template-link highlight">
+                <div class="template-info">
+                  <div class="template-name">04 - Paid Holiday Schedule Update (Chosen)</div>
+                  <div class="template-desc">Modified version with deadline</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="section-content">
-        <ul class="template-list">
-          <li class="template-item">
-            <a href="midas_banner.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">Midas Banner</div>
-                <div class="template-desc">Header banner component</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="midas_logo.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">Midas Logo</div>
-                <div class="template-desc">Logo component</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="midas_footer.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">Midas Footer</div>
-                <div class="template-desc">Footer component</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="full_signature.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">Full Signature</div>
-                <div class="template-desc">Email signature block</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="email_body.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">Email Body</div>
-                <div class="template-desc">Base email body template</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- Quick Templates Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Quick Templates</h2>
-        <p>Ready-to-use email templates in root directory</p>
+      <!-- Core Components Section -->
+      <div class="dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown(this)">
+          <div class="dropdown-title-group">
+            <div class="dropdown-title">Core Components</div>
+            <div class="dropdown-subtitle">Reusable header, footer, banner, logo, and signature components</div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="dropdown-content">
+          <ul class="template-list">
+            <li class="template-item">
+              <a href="midas_banner.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">Midas Banner</div>
+                  <div class="template-desc">Header banner component</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="midas_logo.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">Midas Logo</div>
+                  <div class="template-desc">Logo component</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="midas_footer.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">Midas Footer</div>
+                  <div class="template-desc">Footer component</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="full_signature.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">Full Signature</div>
+                  <div class="template-desc">Email signature block</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="email_body.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">Email Body</div>
+                  <div class="template-desc">Base email body template</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="section-content">
-        <ul class="template-list">
-          <li class="template-item">
-            <a href="annual_leave_email_template.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">Annual Leave Email Template</div>
-                <div class="template-desc">Annual leave notification</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- FD Assets Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2>FD Assets</h2>
-        <p>Assets and components in FD folder</p>
+      <!-- Quick Templates Section -->
+      <div class="dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown(this)">
+          <div class="dropdown-title-group">
+            <div class="dropdown-title">Quick Templates</div>
+            <div class="dropdown-subtitle">Ready-to-use email templates in root directory</div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="dropdown-content">
+          <ul class="template-list">
+            <li class="template-item">
+              <a href="annual_leave_email_template.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">Annual Leave Email Template</div>
+                  <div class="template-desc">Annual leave notification</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="section-content">
-        <ul class="template-list">
-          <li class="template-item">
-            <a href="FD/email footer.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">Email Footer (FD)</div>
-                <div class="template-desc">FD email footer component</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="FD/download-icon.png" class="template-link" target="_blank">
-              <div class="template-info">
-                <div class="template-name">Download Icon</div>
-                <div class="template-desc">PNG asset</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="FD/globe-photo.jpg" class="template-link" target="_blank">
-              <div class="template-info">
-                <div class="template-name">Globe Photo</div>
-                <div class="template-desc">JPG asset</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- User Cases Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2>User Cases</h2>
-        <p>All email templates from My User Cases</p>
+      <!-- FD Assets Section -->
+      <div class="dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown(this)">
+          <div class="dropdown-title-group">
+            <div class="dropdown-title">FD Assets</div>
+            <div class="dropdown-subtitle">Assets and components in FD folder</div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="dropdown-content">
+          <ul class="template-list">
+            <li class="template-item">
+              <a href="FD/email footer.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">Email Footer (FD)</div>
+                  <div class="template-desc">FD email footer component</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="FD/download-icon.png" class="template-link" target="_blank">
+                <div class="template-info">
+                  <div class="template-name">Download Icon</div>
+                  <div class="template-desc">PNG asset</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="FD/globe-photo.jpg" class="template-link" target="_blank">
+                <div class="template-info">
+                  <div class="template-name">Globe Photo</div>
+                  <div class="template-desc">JPG asset</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="section-content">
-        <ul class="template-list">
-          <li class="template-item">
-            <a href="My User Cases/01-Annual-trip-feedback-email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">01 - Annual Trip Feedback Email</div>
-                <div class="template-desc">Feedback request for annual trip</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/02-Policy-acknowledgment-email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">02 - Policy Acknowledgment Email</div>
-                <div class="template-desc">Policy acknowledgment request</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/03-salary_account_reverification_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">03 - Salary Account Reverification Email</div>
-                <div class="template-desc">Salary account verification</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/04-paid_holiday_schedule_update_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">04 - Paid Holiday Schedule Update Email</div>
-                <div class="template-desc">Holiday schedule update (with deadline)</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/05-annual_leave_email_template.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">05 - Annual Leave Email Template</div>
-                <div class="template-desc">Annual leave template</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/06-annual_trip_photos_email_template.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">06 - Annual Trip Photos Email Template</div>
-                <div class="template-desc">Trip photos notification</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/07-inland_revenue_tax_notice_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">07 - Inland Revenue Tax Notice Email</div>
-                <div class="template-desc">Tax notice</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/08-dubai_head_office_opportunity.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">08 - Dubai Head Office Opportunity</div>
-                <div class="template-desc">Job opportunity</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/09-ethical-misconduct-summons_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">09 - Ethical Misconduct Summons Email</div>
-                <div class="template-desc">Misconduct summons</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/10 -fedex_delivery_pending_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">10 - FedEx Delivery Pending Email</div>
-                <div class="template-desc">Delivery notification</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/11-ai-policy-claude_access_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">11 - AI Policy Claude Access Email</div>
-                <div class="template-desc">AI policy update</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/12-corruption-complaint_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">12 - Corruption Complaint Email</div>
-                <div class="template-desc">Corruption complaint</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/13-audit-report-recheck_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">13 - Audit Report Recheck Email</div>
-                <div class="template-desc">Audit report review</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/14-esport-event-opinion_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">14 - Esport Event Opinion Email</div>
-                <div class="template-desc">Event opinion request</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/15-employee_exchange_program_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">15 - Employee Exchange Program Email</div>
-                <div class="template-desc">Exchange program</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/16-industrial_equipment_order_dispatched_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">16 - Industrial Equipment Order Dispatched Email</div>
-                <div class="template-desc">Order dispatch notification</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/17-employee_discount_offer_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">17 - Employee Discount Offer Email</div>
-                <div class="template-desc">Discount offer</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/18-laptop_replacement_dell_to_asus_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">18 - Laptop Replacement Dell to Asus Email</div>
-                <div class="template-desc">Laptop replacement</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/19-microsoft_unusual_activity_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">19 - Microsoft Unusual Activity Email</div>
-                <div class="template-desc">Security alert</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-          <li class="template-item">
-            <a href="My User Cases/20-password_reset_exposure_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">20 - Password Reset Exposure Email</div>
-                <div class="template-desc">Password security alert</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- Chosen Templates Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Chosen Templates</h2>
-        <p>Selected/modified templates</p>
+      <!-- User Cases Section -->
+      <div class="dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown(this)">
+          <div class="dropdown-title-group">
+            <div class="dropdown-title">User Cases</div>
+            <div class="dropdown-subtitle">All email templates from My User Cases</div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="dropdown-content">
+          <ul class="template-list">
+            <li class="template-item">
+              <a href="My User Cases/01-Annual-trip-feedback-email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">01 - Annual Trip Feedback Email</div>
+                  <div class="template-desc">Feedback request for annual trip</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/02-Policy-acknowledgment-email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">02 - Policy Acknowledgment Email</div>
+                  <div class="template-desc">Policy acknowledgment request</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/03-salary_account_reverification_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">03 - Salary Account Reverification Email</div>
+                  <div class="template-desc">Salary account verification</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/04-paid_holiday_schedule_update_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">04 - Paid Holiday Schedule Update Email</div>
+                  <div class="template-desc">Holiday schedule update</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/05-annual_leave_email_template.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">05 - Annual Leave Email Template</div>
+                  <div class="template-desc">Annual leave template</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/06-annual_trip_photos_email_template.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">06 - Annual Trip Photos Email Template</div>
+                  <div class="template-desc">Trip photos notification</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/07-inland_revenue_tax_notice_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">07 - Inland Revenue Tax Notice Email</div>
+                  <div class="template-desc">Tax notice</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/08-dubai_head_office_opportunity.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">08 - Dubai Head Office Opportunity</div>
+                  <div class="template-desc">Job opportunity</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/09-ethical-misconduct-summons_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">09 - Ethical Misconduct Summons Email</div>
+                  <div class="template-desc">Misconduct summons</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/10 -fedex_delivery_pending_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">10 - FedEx Delivery Pending Email</div>
+                  <div class="template-desc">Delivery notification</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/11-ai-policy-claude_access_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">11 - AI Policy Claude Access Email</div>
+                  <div class="template-desc">AI policy update</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/12-corruption-complaint_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">12 - Corruption Complaint Email</div>
+                  <div class="template-desc">Corruption complaint</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/13-audit-report-recheck_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">13 - Audit Report Recheck Email</div>
+                  <div class="template-desc">Audit report review</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/14-esport-event-opinion_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">14 - Esport Event Opinion Email</div>
+                  <div class="template-desc">Event opinion request</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/15-employee_exchange_program_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">15 - Employee Exchange Program Email</div>
+                  <div class="template-desc">Exchange program</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/16-industrial_equipment_order_dispatched_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">16 - Industrial Equipment Order Dispatched Email</div>
+                  <div class="template-desc">Order dispatch notification</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/17-employee_discount_offer_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">17 - Employee Discount Offer Email</div>
+                  <div class="template-desc">Discount offer</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/18-laptop_replacement_dell_to_asus_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">18 - Laptop Replacement Dell to Asus Email</div>
+                  <div class="template-desc">Laptop replacement</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/19-microsoft_unusual_activity_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">19 - Microsoft Unusual Activity Email</div>
+                  <div class="template-desc">Security alert</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+            <li class="template-item">
+              <a href="My User Cases/20-password_reset_exposure_email.html" class="template-link">
+                <div class="template-info">
+                  <div class="template-name">20 - Password Reset Exposure Email</div>
+                  <div class="template-desc">Password security alert</div>
+                </div>
+                <span class="arrow">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="section-content">
-        <ul class="template-list">
-          <li class="template-item">
-            <a href="My User Cases/Chosen/04-paid_holiday_schedule_update_email.html" class="template-link">
-              <div class="template-info">
-                <div class="template-name">04 - Paid Holiday Schedule Update (Chosen)</div>
-                <div class="template-desc">Modified version with deadline</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    </div>
 
     <footer>
       <p>Awareness Temp - Email Template Library</p>
     </footer>
   </div>
+
+  <script>
+    function toggleDropdown(header) {
+      const dropdown = header.parentElement;
+      dropdown.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
